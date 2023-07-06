@@ -1,3 +1,10 @@
 h1, h2 {
   font-family: Lato;
 }
+
+#viz,#viz1,#viz2{
+  width: 80%;
+  height: 300px;
+  }
+
+

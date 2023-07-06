@@ -1,47 +1,19 @@
 <h1>Visualización AG3 </h1>
 Google Colab: <a href = "https://colab.research.google.com/drive/10lwVxbOiJ40QbMK8vhxSD126mRC37BP9?usp=sharing" target="_blank"> https://colab.research.google.com/drive/10lwVxbOiJ40QbMK8vhxSD126mRC37BP9?usp=sharing </a>
 
-head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-
-    <py-env>
-        - matplotlib
-        - pandas
-        - seaborn
-        - matplotlib
-        - io
-        - requests
-        - timeit
-    </py-env>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/d3plus/1.9.2/d3plus.full.min.js"></script>
 </head>
-<body>
-    <h1>Matplotlib</h1>
-    <py-script> print("My Lineplot")</py-script>
-    <div id="lineplot"></div>
-    <py-script output="lineplot">
-# Python Code Goes Here ...
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import io
-import requests
-import timeit
 
+<h2> Gráfico de Columnas con D3Plus</h2>
+<div id="viz"></div>
 
-url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/titanic.csv"
-s = requests.get(url).content
-titanic = pd.read_csv(io.StringIO(s.decode('utf-8')))
+<h2> Reutilizar código. Barras</h2>
+<div id="viz1"></div>
 
-
-sns.set_style("darkgrid")
-g = sns.FacetGrid(titanic, row = 'sex', col = 'pclass', hue = 'survived')
-g.map(sns.histplot, 'age')
-plt.show()
-    </py-script>
+<h2>Caja y Bigotes </h2>
+<div id="viz2"></div>
 </body>
